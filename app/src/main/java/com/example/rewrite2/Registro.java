@@ -38,13 +38,13 @@ private Button rigstrar;
                     nuevoRegistro.put("tipo", "escritor");
                     BaseDeDatos.insert("usuario", null, nuevoRegistro);
 
-                    nuevoRegistro = new ContentValues();
+                    /*nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("titulo", "obraprueba");
                     nuevoRegistro.put("fecha", "12/09/2019");
                     nuevoRegistro.put("tipo", "lienzo");
                     nuevoRegistro.put("idusuario1", 1);
                     BaseDeDatos.insert("obra", null, nuevoRegistro);
-                    BaseDeDatos.close();
+                    BaseDeDatos.close();*/
 
                     Toast.makeText(Registro.this,"Registro exitoso.", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(Registro.this, Login.class);
