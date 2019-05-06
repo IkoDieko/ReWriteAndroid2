@@ -13,31 +13,18 @@ import android.widget.Toast;
 
 
 public class FragmentoCrear extends Fragment {
-    private TextView correoActual, contraActual;
-    private EditText contraNueva, correoNuevo;
-    private Button guardar;
+
 
     @Override
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragmento_crear, container, false);
-
-        correoActual =(TextView) view.findViewById(R.id.usuarioActual);
-        contraActual = (TextView) view.findViewById(R.id.contraActual);
-        correoNuevo = (EditText) view.findViewById(R.id.editnuevocorreo);
-        contraNueva =(EditText) view.findViewById(R.id.editcontranueva);
-        guardar = (Button) view.findViewById(R.id.btnGuardarCambios);
-
-        //String correoA = getActivity().getIntent().getStringExtra("correoheader");
+        //
 
 
         return view;
 
     }
 
-    public void setDatos(){
-        correoActual.setText("aasdsa");
-        contraActual.setText("aaasdada");
-    }
 
 }
