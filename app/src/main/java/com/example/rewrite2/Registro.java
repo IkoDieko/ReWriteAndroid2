@@ -35,7 +35,15 @@ private Button rigstrar;
                     ContentValues nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("usuario", nombre);
                     nuevoRegistro.put("pass", pass);
+                    nuevoRegistro.put("tipo", "escritor");
                     BaseDeDatos.insert("usuario", null, nuevoRegistro);
+
+                    nuevoRegistro = new ContentValues();
+                    nuevoRegistro.put("titulo", "obraprueba");
+                    nuevoRegistro.put("fecha", "12/09/2019");
+                    nuevoRegistro.put("tipo", "lienzo");
+                    nuevoRegistro.put("idusuario1", 1);
+                    BaseDeDatos.insert("obra", null, nuevoRegistro);
                     BaseDeDatos.close();
 
                     Toast.makeText(Registro.this,"Registro exitoso.", Toast.LENGTH_SHORT).show();
