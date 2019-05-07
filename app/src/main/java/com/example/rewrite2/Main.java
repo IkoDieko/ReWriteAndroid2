@@ -1,6 +1,8 @@
 package com.example.rewrite2;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -47,8 +49,15 @@ public class Main extends AppCompatActivity
         toggle.syncState();
 
        Intent intent = getIntent();
-       String correo =intent.getStringExtra("correoheader");
-       correohead.setText(correo);
+       String id =intent.getStringExtra("idusuario");
+        AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Main.this, "usuario", null, 1);
+        SQLiteDatabase bd = alta.getWritableDatabase();
+        Cursor buscar = bd.rawQuery("select * from usuario where idusuario = '"+id+"'", null);
+        String usuario = "";
+        if (buscar.moveToFirst()){
+            usuario = buscar.getString(buscar.getColumnIndex("usuario"));
+        }
+       correohead.setText(usuario);
     }
 
 

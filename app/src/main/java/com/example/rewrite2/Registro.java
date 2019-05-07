@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 public class Registro extends AppCompatActivity {
 private EditText usuario, contra;
 private Button rigstrar;
+private FloatingActionButton regresa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ private Button rigstrar;
         usuario = findViewById(R.id.regisusuario);
         contra = findViewById(R.id.regiscontra);
         rigstrar = findViewById(R.id.btnaltausuario);
+        regresa = findViewById(R.id.regresaRegistro);
         rigstrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +84,15 @@ private Button rigstrar;
                         finish();
                     }
                 }
+            }
+        });
+
+        regresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent o = new Intent(Registro.this, Login.class);
+                startActivity(o);
+                finish();
             }
         });
 

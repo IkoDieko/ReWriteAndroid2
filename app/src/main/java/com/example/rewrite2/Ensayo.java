@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.EditText;
+import android.widget.Scroller;
 
 public class Ensayo extends AppCompatActivity {
     private EditText titulo, intro, desa, con, ref;

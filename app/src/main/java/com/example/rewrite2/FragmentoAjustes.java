@@ -35,14 +35,17 @@ public class FragmentoAjustes extends Fragment {
         SQLiteDatabase bd = alta.getWritableDatabase();
 
         String contraA;
-        String correoA = getActivity().getIntent().getStringExtra("correoheader");
-        Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+correoA+"'", null);
+        String correoA;
+        String id;
+        id = getActivity().getIntent().getStringExtra("idusuario");
+        Cursor buscar = bd.rawQuery("select * from usuario where idusuario = '"+id+"'", null);
         if (buscar.moveToFirst()){
             contraA = buscar.getString(buscar.getColumnIndex("pass"));
+            correoA = buscar.getString(buscar.getColumnIndex("usuario"));
             contraActual.setText(contraA);
+            correoActual.setText(correoA);
         }
-        correoActual.setText(correoA);
-
+        
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -31,6 +31,9 @@ public class FragmentoCrear extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent o = new Intent (view.getContext(), Lienzo.class );
+                String usuariocreador;
+                usuariocreador =  getActivity().getIntent().getStringExtra("correoheader");
+                o.putExtra("usuariocreador", usuariocreador);
                 startActivity(o);
             }
         });
@@ -39,6 +42,9 @@ public class FragmentoCrear extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent o = new Intent (view.getContext(), Ensayo.class );
+                String usuariocreador;
+                usuariocreador =  getActivity().getIntent().getStringExtra("correoheader");
+                o.putExtra("usuariocreador", usuariocreador);
                 startActivity(o);
             }
         });

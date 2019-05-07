@@ -52,10 +52,13 @@ public class Login extends AppCompatActivity {
                     }else if(tipo.equals("programador")){
                         i = new Intent(Login.this, Main.class);
                     }
+                    String id;
+                    id = buscar.getString(buscar.getColumnIndex("idusuario"));
 
-                    i.putExtra("correoheader", usuario);
+                    i.putExtra("idusuario", id);
                     i.putExtra("tipo", tipo);
                     startActivity(i);
+                    finish();;
 
                 } else {
                     Toast.makeText(Login.this,"Usuario y/o contraseña no coinciden.", Toast.LENGTH_SHORT).show();
