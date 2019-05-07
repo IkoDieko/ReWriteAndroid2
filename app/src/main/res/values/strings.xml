@@ -9,5 +9,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_crear">Crear</string>
     <string name="title_activity_main">Main</string>
+    <string name="title_activity_alta_reporte">Alta Reporte de Evento</string>
+    <string name="title_activity_ver_reportes_e">Ver Reportes Eventos</string>
+    <string name="title_activity_reporte_evento">ReporteEvento</string>
 
 </resources>
