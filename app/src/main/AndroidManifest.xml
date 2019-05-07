@@ -9,10 +9,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ReporteEvento"
+            android:label="@string/title_activity_reporte_evento"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.ReporteEvento" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".VerReportesE"
+            android:exported="true"
+            android:label="@string/title_activity_ver_reportes_e"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VerReportesE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InicioEventos"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.InicioEventos" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Ensayo"
             android:exported="true"></activity>
         <activity android:name=".Lienzo"
             android:exported="true"/>
+        <activity
+            android:name=".AltaReporte"
+            android:exported="true"
+            android:label="@string/title_activity_alta_reporte"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.AltaReporte" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Registro" />
         <activity
             android:name=".Main"
@@ -29,3 +71,5 @@
     </application>
 
 </manifest>
+
+

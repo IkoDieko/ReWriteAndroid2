@@ -33,13 +33,30 @@ public class Login extends AppCompatActivity {
                 SQLiteDatabase bd = alta.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+usuario+"' and pass ='"+pass+"'", null);
 
-
+                String tipo = "";
 
                 if (buscar.moveToFirst()) {
-                    Intent i = new Intent(Login.this, Main.class);
+                    tipo = buscar.getString(buscar.getColumnIndex("tipo"));
+                    System.out.println(tipo);
+                    Intent i = new Intent(Login.this, Main.class);;
+                    if(tipo.equals("escritor")){
+                        i = new Intent(Login.this, Main.class);
+                    }else if(tipo.equals("ingenieroE")){
+                        i = new Intent(Login.this, InicioEventos.class);
+                    }else if(tipo.equals("operador")){
+                        i = new Intent(Login.this, InicioEventos.class);
+                    }else if(tipo.equals("gerenteE")){
+                        i = new Intent(Login.this, InicioEventos.class);
+                    }else if(tipo.equals("gerenteM")){
+                        i = new Intent(Login.this, Main.class);
+                    }else if(tipo.equals("programador")){
+                        i = new Intent(Login.this, Main.class);
+                    }
+
                     i.putExtra("correoheader", usuario);
+                    i.putExtra("tipo", tipo);
                     startActivity(i);
-                    finish();
+
                 } else {
                     Toast.makeText(Login.this,"Usuario y/o contraseña no coinciden.", Toast.LENGTH_SHORT).show();
                 }
