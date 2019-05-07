@@ -2,6 +2,7 @@ package com.example.rewrite2;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,14 +30,23 @@ private Button rigstrar;
                 if (nombre.isEmpty() || pass.isEmpty()){
                     Toast.makeText(Registro.this,"Hay campos vacios.", Toast.LENGTH_SHORT).show();
                 } else {
-                    AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Registro.this, "usuario", null, 1);
-                    SQLiteDatabase BaseDeDatos = alta.getWritableDatabase();
 
-                    ContentValues nuevoRegistro = new ContentValues();
-                    nuevoRegistro.put("usuario", nombre);
-                    nuevoRegistro.put("pass", pass);
-                    nuevoRegistro.put("tipo", "escritor");
-                    BaseDeDatos.insert("usuario", null, nuevoRegistro);
+
+
+                    AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Registro.this, "usuario", null, 1);
+                    SQLiteDatabase bd = alta.getWritableDatabase();
+                    Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+nombre+"'", null);
+
+                    if (buscar.moveToFirst()){
+                        Toast.makeText(Registro.this,"Nombre de usuario no disponible.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        SQLiteDatabase BaseDeDatos = alta.getWritableDatabase();
+
+                        ContentValues nuevoRegistro = new ContentValues();
+                        nuevoRegistro.put("usuario", nombre);
+                        nuevoRegistro.put("pass", pass);
+                        nuevoRegistro.put("tipo", "escritor");
+                        BaseDeDatos.insert("usuario", null, nuevoRegistro);
 
                     /*nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("titulo", "obraprueba");
@@ -46,10 +56,11 @@ private Button rigstrar;
                     BaseDeDatos.insert("obra", null, nuevoRegistro);
                     BaseDeDatos.close();*/
 
-                    Toast.makeText(Registro.this,"Registro exitoso.", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(Registro.this, Login.class);
-                    startActivity(i);
-                    finish();
+                        Toast.makeText(Registro.this, "Registro exitoso.", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Registro.this, Login.class);
+                        startActivity(i);
+                        finish();
+                    }
                 }
             }
         });
