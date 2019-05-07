@@ -47,14 +47,33 @@ private Button rigstrar;
                         nuevoRegistro.put("pass", pass);
                         nuevoRegistro.put("tipo", "escritor");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
+                        /*
+                        nuevoRegistro.put("usuario", "Ana");
+                        nuevoRegistro.put("pass", "123");
+                        nuevoRegistro.put("tipo", "gerenteE");
+                        BaseDeDatos.insert("usuario", null, nuevoRegistro);
+
+                        nuevoRegistro.put("usuario", "Hugo");
+                        nuevoRegistro.put("pass", "123");
+                        nuevoRegistro.put("tipo", "operador");
+                        BaseDeDatos.insert("usuario", null, nuevoRegistro);
+
+                        nuevoRegistro.put("usuario", "Pedro");
+                        nuevoRegistro.put("pass", "123");
+                        nuevoRegistro.put("tipo", "ingenieroE");
+                        BaseDeDatos.insert("usuario", null, nuevoRegistro);
+                        */
 
                     /*nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("titulo", "obraprueba");
                     nuevoRegistro.put("fecha", "12/09/2019");
                     nuevoRegistro.put("tipo", "lienzo");
                     nuevoRegistro.put("idusuario1", 1);
-                    BaseDeDatos.insert("obra", null, nuevoRegistro);
-                    BaseDeDatos.close();*/
+                    BaseDeDatos.insert("obra", null, nuevoRegistro);*/
+
+                        BaseDeDatos.close();
+
+
 
                         Toast.makeText(Registro.this, "Registro exitoso.", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Registro.this, Login.class);
