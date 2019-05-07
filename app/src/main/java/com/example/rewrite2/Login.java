@@ -33,6 +33,8 @@ public class Login extends AppCompatActivity {
                 SQLiteDatabase bd = alta.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+usuario+"' and pass ='"+pass+"'", null);
 
+
+
                 if (buscar.moveToFirst()) {
                     Intent i = new Intent(Login.this, Main.class);
                     i.putExtra("correoheader", usuario);
