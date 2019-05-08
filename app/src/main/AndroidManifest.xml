@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditLienzo"
-            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".EditEnsayo"
+            android:windowSoftInputMode="adjustPan" ></activity>
+        <activity
+            android:name=".EditLienzo"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ReporteEvento"
             android:exported="true"

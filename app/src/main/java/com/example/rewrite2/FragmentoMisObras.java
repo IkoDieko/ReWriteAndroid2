@@ -91,7 +91,14 @@ public class FragmentoMisObras extends Fragment {
         listaE.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                String item = (String) listaE.getItemAtPosition(position);
+                String idusuario;
+                idusuario = getActivity().getIntent().getStringExtra("idusuario");
+                //Toast.makeText(view.getContext(),"Posición: " + item,Toast.LENGTH_SHORT).show();
+                Intent E = new Intent(view.getContext(), EditEnsayo.class);
+                E.putExtra("idusuario4", idusuario);
+                E.putExtra("TituloE", item);
+                startActivity(E);
             }
         });
 

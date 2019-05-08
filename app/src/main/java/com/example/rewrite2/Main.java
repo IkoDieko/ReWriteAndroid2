@@ -19,10 +19,12 @@ import android.widget.TextView;
 
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FloatingActionButton recarg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recarg = findViewById(R.id.recarga);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -51,6 +53,13 @@ public class Main extends AppCompatActivity
             usuario = buscar.getString(buscar.getColumnIndex("usuario"));
         }
        correohead.setText(usuario);
+
+        recarg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contenido, new FragmentoMisObras()).commit();
+            }
+        });
     }
 
 
