@@ -36,7 +36,7 @@ private FloatingActionButton regresa;
 
 
 
-                    AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Registro.this, "usuario", null, 1);
+                    AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Registro.this);
                     SQLiteDatabase bd = alta.getWritableDatabase();
                     Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+nombre+"'", null);
 

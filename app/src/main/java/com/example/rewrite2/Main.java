@@ -27,15 +27,6 @@ public class Main extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
@@ -50,7 +41,9 @@ public class Main extends AppCompatActivity
 
        Intent intent = getIntent();
        String id =intent.getStringExtra("idusuario");
-        AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Main.this, "usuario", null, 1);
+
+
+        AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Main.this);
         SQLiteDatabase bd = alta.getWritableDatabase();
         Cursor buscar = bd.rawQuery("select * from usuario where idusuario = '"+id+"'", null);
         String usuario = "";

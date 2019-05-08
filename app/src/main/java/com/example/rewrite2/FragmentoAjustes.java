@@ -31,7 +31,7 @@ public class FragmentoAjustes extends Fragment {
         contraNueva =(EditText) view.findViewById(R.id.editcontranueva);
         guardar = (Button) view.findViewById(R.id.btnGuardarCambios);
 
-        AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(view.getContext(), "usuario", null, 1);
+        AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(view.getContext());
         SQLiteDatabase bd = alta.getWritableDatabase();
 
         String contraA;
@@ -45,14 +45,14 @@ public class FragmentoAjustes extends Fragment {
             contraActual.setText(contraA);
             correoActual.setText(correoA);
         }
-        
+
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                String contraN = contraNueva.getText().toString();
                String correoN = correoNuevo.getText().toString();
                 String id;
-                AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(view.getContext(), "usuario", null, 1);
+                AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(view.getContext());
                 SQLiteDatabase bd = alta.getWritableDatabase();
 
                 Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+correoNuevo.getText().toString()+"'", null);

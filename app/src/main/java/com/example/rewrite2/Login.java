@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
                 String usuario = usu.getText().toString();
                 String pass = contra.getText().toString();
 
-                AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Login.this, "usuario", null, 1);
+                AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Login.this);
                 SQLiteDatabase bd = alta.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+usuario+"' and pass ='"+pass+"'", null);
 
