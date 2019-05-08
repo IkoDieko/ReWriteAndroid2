@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EditLienzo"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".ReporteEvento"
-            android:label="@string/title_activity_reporte_evento"
             android:exported="true"
+            android:label="@string/title_activity_reporte_evento"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ReporteEvento" />
@@ -40,10 +42,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Ensayo"
+        <activity
+            android:name=".Ensayo"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan" ></activity>
-        <activity android:name=".Lienzo"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Lienzo"
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
@@ -73,5 +77,3 @@
     </application>
 
 </manifest>
-
-

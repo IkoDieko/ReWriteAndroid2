@@ -51,20 +51,25 @@ public class Ensayo extends AppCompatActivity {
                 SQLiteDatabase bd = soporte.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where idusuario = '"+id+"'", null);
                 if (buscar.moveToFirst()) {
-                    SQLiteDatabase BaseDeDatos = soporte.getWritableDatabase();
+                    Cursor validar = bd.rawQuery("select * from ensayo where idusuario2 = '"+id+"' and tituloensayo = '"+tit+"'", null);
+                    if (validar.moveToFirst()){
+                        Toast.makeText(Ensayo.this,"Ya tienes un ensayo con ese título.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        SQLiteDatabase BaseDeDatos = soporte.getWritableDatabase();
 
-                    ContentValues nuevoRegistro = new ContentValues();
-                    nuevoRegistro.put("tituloensayo", tit);
-                    nuevoRegistro.put("intro", introdu);
-                    nuevoRegistro.put("desarrollo", desarrollo);
-                    nuevoRegistro.put("conclusion", conclusion);
-                    nuevoRegistro.put("referencias", refere);
-                    nuevoRegistro.put("idusuario2", id);
-                    BaseDeDatos.insert("ensayo", null, nuevoRegistro);
+                        ContentValues nuevoRegistro = new ContentValues();
+                        nuevoRegistro.put("tituloensayo", tit);
+                        nuevoRegistro.put("intro", introdu);
+                        nuevoRegistro.put("desarrollo", desarrollo);
+                        nuevoRegistro.put("conclusion", conclusion);
+                        nuevoRegistro.put("referencias", refere);
+                        nuevoRegistro.put("idusuario2", id);
+                        BaseDeDatos.insert("ensayo", null, nuevoRegistro);
 
-                    Toast.makeText(Ensayo.this, "Obra guardada.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Ensayo.this, "Obra guardada.", Toast.LENGTH_SHORT).show();
 
-                    finish();
+                        finish();
+                    }
                 }
 
             }

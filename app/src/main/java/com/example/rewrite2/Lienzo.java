@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Scroller;
 import android.widget.Toast;
 
 public class Lienzo extends AppCompatActivity {
@@ -22,8 +21,8 @@ public class Lienzo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lienzo);
 
-        titulo = findViewById(R.id.editTituloLienzo);
-        contenido = findViewById(R.id.editContenidoLienzo);
+        titulo = findViewById(R.id.actualizaTituloLienzo);
+        contenido = findViewById(R.id.actualizaContenidoLienzo);
         guardar = findViewById(R.id.guardarLienzo);
         regresar = findViewById(R.id.salirLienzo);
 
@@ -44,17 +43,22 @@ public class Lienzo extends AppCompatActivity {
                 SQLiteDatabase bd = soporte.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where idusuario = '"+id+"'", null);
                 if (buscar.moveToFirst()){
-                    SQLiteDatabase BaseDeDatos = soporte.getWritableDatabase();
+                    Cursor validar = bd.rawQuery("select * from lienzo where idusuario1 = '"+id+"' and titulolienzo = '"+Tit+"'", null);
+                    if (validar.moveToFirst()){
+                        Toast.makeText(Lienzo.this,"Ya tienes un lienzo con ese título.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        SQLiteDatabase BaseDeDatos = soporte.getWritableDatabase();
 
-                    ContentValues nuevoRegistro = new ContentValues();
-                    nuevoRegistro.put("titulolienzo", Tit);
-                    nuevoRegistro.put("contenido", Conte);
-                    nuevoRegistro.put("idusuario1", id);
-                    BaseDeDatos.insert("lienzo", null, nuevoRegistro);
+                        ContentValues nuevoRegistro = new ContentValues();
+                        nuevoRegistro.put("titulolienzo", Tit);
+                        nuevoRegistro.put("contenido", Conte);
+                        nuevoRegistro.put("idusuario1", id);
+                        BaseDeDatos.insert("lienzo", null, nuevoRegistro);
 
-                    Toast.makeText(Lienzo.this,"Obra guardada.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Lienzo.this, "Obra guardada.", Toast.LENGTH_SHORT).show();
 
-                    finish();
+                        finish();
+                    }
 
                     //String usuariocreador = buscar.getString(buscar.getColumnIndex("usuario"));
                    // titulo.setText(usuariocreador);

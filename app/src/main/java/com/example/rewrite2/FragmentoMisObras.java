@@ -1,5 +1,6 @@
 package com.example.rewrite2;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -55,6 +56,14 @@ public class FragmentoMisObras extends Fragment {
         listaL.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = (String) listaL.getItemAtPosition(position);
+                String idusuario;
+                idusuario = getActivity().getIntent().getStringExtra("idusuario");
+                //Toast.makeText(view.getContext(),"Posición: " + item,Toast.LENGTH_SHORT).show();
+                Intent L = new Intent(view.getContext(), EditLienzo.class);
+                L.putExtra("idusuario3", idusuario);
+                L.putExtra("TituloL", item);
+                startActivity(L);
 
             }
         });
