@@ -51,6 +51,8 @@ public class Login extends AppCompatActivity {
                         i = new Intent(Login.this, Main.class);
                     }else if(tipo.equals("programador")){
                         i = new Intent(Login.this, Main.class);
+                    }else if(tipo.equals("editor")){
+                        i = new Intent(Login.this, InicioFAQs.class);
                     }
                     String id;
                     id = buscar.getString(buscar.getColumnIndex("idusuario"));
