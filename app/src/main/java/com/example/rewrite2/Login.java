@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
                     i.putExtra("idusuario", id);
                     i.putExtra("tipo", tipo);
                     startActivity(i);
-                    finish();;
+                    finish();
 
                 } else {
                     Toast.makeText(Login.this,"Usuario y/o contraseña no coinciden.", Toast.LENGTH_SHORT).show();

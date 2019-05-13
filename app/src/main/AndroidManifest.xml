@@ -10,12 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AltaReporteMCero"
-            android:label="@string/title_activity_alta_reporte_mcero"
-            android:exported="true"
+            android:name=".DarALtaFAQ"
+            android:label="@string/title_activity_dar_alta_faq"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".PublicaFAQ"
+            android:exported="true"
+            android:label="@string/title_activity_publica_faq"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RevisaFAQ"
+            android:exported="true"
+            android:label="@string/title_activity_revisa_faq"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AltasFAQ"
+            android:exported="true"
+            android:label="@string/title_activity_altas_faq"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AltaReporteMCero"
+            android:exported="true"
+            android:label="@string/title_activity_alta_reporte_mcero"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".InicioFAQs"
+            android:exported="true"
             android:label="@string/title_activity_inicio_faqs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

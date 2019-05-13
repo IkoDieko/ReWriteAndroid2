@@ -12,7 +12,11 @@
     <string name="title_activity_alta_reporte">Alta Reporte de Evento</string>
     <string name="title_activity_ver_reportes_e">Ver Reportes Eventos</string>
     <string name="title_activity_reporte_evento">ReporteEvento</string>
-    <string name="title_activity_inicio_faqs">InicioFAQs</string>
+    <string name="title_activity_inicio_faqs">Inicio FAQs</string>
     <string name="title_activity_alta_reporte_mcero">Alta Reporte desde cero</string>
+    <string name="title_activity_altas_faq">Alta de FAQs</string>
+    <string name="title_activity_revisa_faq">Revisar FAQs</string>
+    <string name="title_activity_publica_faq">Publicar FAQs para usuarios</string>
+    <string name="title_activity_dar_alta_faq">Dar de Alta FAQ</string>
 
 </resources>

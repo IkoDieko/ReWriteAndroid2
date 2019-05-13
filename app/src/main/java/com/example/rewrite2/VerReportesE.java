@@ -3,7 +3,6 @@ package com.example.rewrite2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -32,7 +31,7 @@ public class VerReportesE extends AppCompatActivity {
         });
         //Casteando botones para ver Reporte con detalles en ReporteEvento.class
         btnVerRep1 = (Button) findViewById(R.id.btnVerR1);
-        btnVerRep2 = (Button) findViewById(R.id.btnVerR2);
+        btnVerRep2 = (Button) findViewById(R.id.btnVerRF2);
         btnVerRep3 = (Button) findViewById(R.id.btnVerR3);
         btnVerRep4 = (Button) findViewById(R.id.btnVerR4);
         btnVerRep5 = (Button) findViewById(R.id.btnVerR5);
@@ -40,7 +39,7 @@ public class VerReportesE extends AppCompatActivity {
         txtFolio1 = (TextView) findViewById(R.id.labelFolio1);
         txtFolio2 = (TextView) findViewById(R.id.labelFolio2);
         txtFolio3 = (TextView) findViewById(R.id.labelFolio3);
-        txtFolio4 = (TextView) findViewById(R.id.labelFolio4);
+        txtFolio4 = (TextView) findViewById(R.id.labelFolioF4);
         txtFolio5 = (TextView) findViewById(R.id.labelFolio5);
         txtFolioB = (TextView) findViewById(R.id.labelFolioBusca);
 

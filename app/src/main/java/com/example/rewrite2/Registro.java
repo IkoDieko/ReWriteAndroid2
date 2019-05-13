@@ -50,25 +50,27 @@ private FloatingActionButton regresa;
                         nuevoRegistro.put("pass", pass);
                         nuevoRegistro.put("tipo", "escritor");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
-                        /*
-                        nuevoRegistro = new ContentValues();
-                        nuevoRegistro.put("usuario", "Ana");
+
+                     /*   nuevoRegistro = new ContentValues();
+                        nuevoRegistro.put("usuario", "Marco");
                         nuevoRegistro.put("pass", "123");
-                        nuevoRegistro.put("tipo", "gerenteE");
+                        nuevoRegistro.put("tipo", "editor");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
 
+                        nuevoRegistro = new ContentValues();
                         nuevoRegistro.put("usuario", "Hugo");
                         nuevoRegistro.put("pass", "123");
                         nuevoRegistro.put("tipo", "operador");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
 
+                        nuevoRegistro = new ContentValues();
                         nuevoRegistro.put("usuario", "Pedro");
                         nuevoRegistro.put("pass", "123");
                         nuevoRegistro.put("tipo", "ingenieroE");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
-                        */
 
-                    /*nuevoRegistro = new ContentValues();
+
+                    nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("titulo", "obraprueba");
                     nuevoRegistro.put("fecha", "12/09/2019");
                     nuevoRegistro.put("tipo", "lienzo");

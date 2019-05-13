@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".VerReportesE"
-    tools:showIn="@layout/activity_ver_reportes_e">
+    tools:context=".AltasFAQ"
+    tools:showIn="@layout/activity_altas_faq">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="351dp"
+        android:layout_height="462dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -19,14 +19,15 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.147">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -53,15 +54,6 @@
                     android:textColor="@color/design_default_color_primary_dark" />
 
                 <TextView
-                    android:id="@+id/labelEstado"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Estado"
-                    android:textColor="@color/design_default_color_primary_dark" />
-
-                <TextView
                     android:id="@+id/labelEtiqueta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,85 +68,73 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
                 android:text="RECIENTES"
                 android:textColor="@android:color/background_light"
-                android:textSize="14sp"
-                android:gravity="center"
-                android:background="@color/colorPrimaryDark"
-                />
+                android:textSize="14sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelFolio1"
+                    android:id="@+id/labelFolioF1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFecha1"
+                    android:id="@+id/labelFechaF1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstado1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiqueta1"
+                    android:id="@+id/labelEtiquetaF1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btnVerR1"
+                    android:id="@+id/btnVerRF1"
                     android:layout_width="20dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="+" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelFolio2"
+                    android:id="@+id/labelFolioF2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFecha2"
+                    android:id="@+id/labelFechaF2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstado2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiqueta2"
+                    android:id="@+id/labelEtiquetaF2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -168,47 +148,42 @@
                     android:text="+" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelFolio3"
+                    android:id="@+id/labelFolioF3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFecha3"
+                    android:id="@+id/labelFechaF3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstado3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiqueta3"
+                    android:id="@+id/labelEtiquetaF3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btnVerR3"
+                    android:id="@+id/btnVerRF3"
                     android:layout_width="20dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="+" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -222,85 +197,72 @@
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFecha4"
+                    android:id="@+id/labelFechaF4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstado4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiqueta4"
+                    android:id="@+id/labelEtiquetaF4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btnVerR4"
+                    android:id="@+id/btnVerRF4"
                     android:layout_width="20dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="+" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelFolio5"
+                    android:id="@+id/labelFolioF5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFecha5"
+                    android:id="@+id/labelFechaF5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstado5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiqueta5"
+                    android:id="@+id/labelEtiquetaF5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btnVerR5"
+                    android:id="@+id/btnVerRF5"
                     android:layout_width="20dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="+" />
 
             </LinearLayout>
+
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textView1F1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
                 android:text="BUSCAR"
                 android:textColor="@android:color/background_light"
-                android:textSize="14sp"
-                android:gravity="center"
-                android:background="@color/colorPrimaryDark"
-                />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -308,7 +270,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelF"
+                    android:id="@+id/labelFF"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_weight="1"
@@ -317,7 +279,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtFolioBusca"
+                    android:id="@+id/txtFolioBuscaF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -325,7 +287,7 @@
                     android:inputType="textPersonName" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/imageButtonF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -340,35 +302,28 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/labelFolioBusca"
+                    android:id="@+id/labelFolioBuscaF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelFechaBusca"
+                    android:id="@+id/labelFechaBuscaF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/labelEstadoBusca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/labelEtiquetaBusca"
+                    android:id="@+id/labelEtiquetaBuscaF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btnVerRBusca"
+                    android:id="@+id/btnVerRBuscaF"
                     android:layout_width="20dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
@@ -378,5 +333,23 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Para dar de alta una FAQ selecciona un reporte:"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
 </android.support.constraint.ConstraintLayout>
