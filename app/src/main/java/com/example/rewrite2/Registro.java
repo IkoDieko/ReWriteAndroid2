@@ -51,6 +51,7 @@ private FloatingActionButton regresa;
                         nuevoRegistro.put("tipo", "escritor");
                         BaseDeDatos.insert("usuario", null, nuevoRegistro);
                         /*
+                        nuevoRegistro = new ContentValues();
                         nuevoRegistro.put("usuario", "Ana");
                         nuevoRegistro.put("pass", "123");
                         nuevoRegistro.put("tipo", "gerenteE");

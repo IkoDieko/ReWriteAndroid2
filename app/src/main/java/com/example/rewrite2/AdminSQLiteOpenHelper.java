@@ -24,7 +24,16 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         BaseDeDatos.execSQL("create table ensayo (idensayo integer primary key autoincrement not null,tituloensayo text, intro text, desarrollo text, " +
                 "conclusion text, referencias text, idusuario2 integer, " +
                 " FOREIGN KEY (idusuario2) REFERENCES usuario(idusuario))");
-        BaseDeDatos.execSQL("create table reporte (idreporte integer primary key autoincrement not null," +
+        BaseDeDatos.execSQL("create table reporteE (idreporteE integer primary key autoincrement not null," +
+                " idlevanta integer, idasignado integer, idsoluciona integer, idcierra integer," +
+                " fechaLevanta text, fechaAsigna text, fechaSoluciona text, fechaCierra text," +
+                " etiqueta text, estado text, problema text, solucion text," +
+                " FOREIGN KEY (idlevanta) REFERENCES usuario(idusuario), " +
+                " FOREIGN KEY (idasignado) REFERENCES usuario(idusuario)," +
+                " FOREIGN KEY (idsoluciona) REFERENCES usuario(idusuario)," +
+                " FOREIGN KEY (idcierra) REFERENCES usuario(idusuario))" +
+                "");
+        BaseDeDatos.execSQL("create table reporteM (idreporteM integer primary key autoincrement not null," +
                 " idlevanta integer, idasignado integer, idsoluciona integer, idcierra integer," +
                 " fechaLevanta text, fechaAsigna text, fechaSoluciona text, fechaCierra text," +
                 " etiqueta text, estado text, problema text, solucion text," +
