@@ -49,6 +49,40 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 " FOREIGN KEY (idlevanta2) REFERENCES usuario(idusuario))"+
                 "");
 
+        ContentValues nuevoRegistro1, nuevoRegistro2, nuevoRegistro3, nuevoRegistro4, nuevoRegistro5;
+
+        nuevoRegistro1 = new ContentValues();
+        nuevoRegistro1.put("usuario", "Marco");
+        nuevoRegistro1.put("pass", "123");
+        nuevoRegistro1.put("tipo", "editor");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro1);
+
+        nuevoRegistro2 = new ContentValues();
+        nuevoRegistro2.put("usuario", "Hugo");
+        nuevoRegistro2.put("pass", "123");
+        nuevoRegistro2.put("tipo", "operador");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro2);
+
+        nuevoRegistro3 = new ContentValues();
+        nuevoRegistro3.put("usuario", "Pedro");
+        nuevoRegistro3.put("pass", "123");
+        nuevoRegistro3.put("tipo", "ingenieroE");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro3);
+
+        nuevoRegistro4 = new ContentValues();
+        nuevoRegistro4.put("usuario", "Bruno");
+        nuevoRegistro4.put("pass", "123");
+        nuevoRegistro4.put("tipo", "ingenieroM");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro4);
+
+        nuevoRegistro5 = new ContentValues();
+        nuevoRegistro5.put("usuario", "Aldo");
+        nuevoRegistro5.put("pass", "123");
+        nuevoRegistro5.put("tipo", "gerenteM");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro5);
+
+
+
 
 
         /*ContentValues cv = new ContentValues();

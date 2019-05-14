@@ -48,9 +48,9 @@ public class Login extends AppCompatActivity {
                     }else if(tipo.equals("gerenteE")){
                         i = new Intent(Login.this, InicioEventos.class);
                     }else if(tipo.equals("gerenteM")){
-                        i = new Intent(Login.this, Main.class);
+                        i = new Intent(Login.this, AltaReporteMCero.class);
                     }else if(tipo.equals("programador")){
-                        i = new Intent(Login.this, Main.class);
+                        i = new Intent(Login.this, AltaReporteMCero.class);
                     }else if(tipo.equals("editor")){
                         i = new Intent(Login.this, InicioFAQs.class);
                     }
