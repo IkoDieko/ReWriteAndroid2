@@ -11,7 +11,8 @@ import android.widget.Button;
 
 public class InicioFAQs extends AppCompatActivity {
 
-    private Button btnAltas, btnPublica, btnRevisa;
+    private Button btnAltas, btnPublica, btnRevisa, btnAltaCero;
+    private String usID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,9 @@ public class InicioFAQs extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_faqs);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent miInt2 = getIntent();
+        usID = miInt2.getStringExtra("idusuario");
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -31,11 +35,13 @@ public class InicioFAQs extends AppCompatActivity {
         btnAltas = (Button) findViewById(R.id.btnAltaF);
         btnPublica = (Button) findViewById(R.id.btnPublicaF);
         btnRevisa = (Button) findViewById(R.id.btnRevisarF);
+        btnAltaCero = (Button) findViewById(R.id.btnAltaCero);
 
         btnAltas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(InicioFAQs.this, AltasFAQ.class);
+                i.putExtra("idusuario",usID);
                 startActivity(i);
             }
         });
@@ -43,6 +49,7 @@ public class InicioFAQs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(InicioFAQs.this, PublicaFAQ.class);
+                i.putExtra("idusuario",usID);
                 startActivity(i);
             }
         });
@@ -50,6 +57,15 @@ public class InicioFAQs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(InicioFAQs.this, RevisaFAQ.class);
+                i.putExtra("idusuario",usID);
+                startActivity(i);
+            }
+        });
+        btnAltaCero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InicioFAQs.this, AltaFAQCero.class);
+                i.putExtra("idusuario",usID);
                 startActivity(i);
             }
         });

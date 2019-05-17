@@ -30,7 +30,6 @@ public class AltasFAQ extends AppCompatActivity {
             }
         });
 
-
         //Casteando botones para ver Reporte con detalles en dARaLTAFAQ.class
         btnVerRepF1 = (Button) findViewById(R.id.btnVerRF1);
         btnVerRepF2 = (Button) findViewById(R.id.btnVerRF2);
@@ -93,6 +92,8 @@ public class AltasFAQ extends AppCompatActivity {
                 startActivity(miIntent);
             }
         });
+
+
     }
 
 }

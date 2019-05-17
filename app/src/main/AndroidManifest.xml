@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".AltaFAQCero"
+            android:label="@string/title_activity_alta_faqcero"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".DarALtaFAQ"
             android:label="@string/title_activity_dar_alta_faq"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PublicaFAQ"
             android:exported="true"
