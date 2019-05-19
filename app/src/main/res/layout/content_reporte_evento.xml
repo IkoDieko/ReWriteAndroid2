@@ -41,12 +41,11 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textViewFolio"
+                    android:id="@+id/editIdEvent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="12"
                     android:textColor="@android:color/background_dark"
                     android:textSize="18sp" />
 
@@ -61,11 +60,10 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/labelEstadoReporte"
+                    android:id="@+id/editEstadoEv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No asignado"
                     android:textColor="@android:color/background_dark"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -84,13 +82,12 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtEtiquetaReporte"
+                    android:id="@+id/editEtoqueta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="configuracion"
                     android:textColor="@android:color/background_dark" />
             </LinearLayout>
 
@@ -108,13 +105,12 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtLevantaReporte"
+                    android:id="@+id/txtLevantado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Juan" />
+                    android:inputType="textPersonName" />
             </LinearLayout>
 
             <LinearLayout
@@ -128,7 +124,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Asignar a:"
-                    android:textColor="@color/colorAccent"
                     android:textSize="18sp" />
 
                 <EditText
@@ -138,7 +133,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Hugo"
                     android:textColor="@android:color/background_dark" />
             </LinearLayout>
 
@@ -162,7 +156,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="-"
                     android:textColor="@android:color/background_dark" />
             </LinearLayout>
 
@@ -180,13 +173,12 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/txtCerrado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="-"
                     android:textColor="@android:color/background_dark" />
             </LinearLayout>
 
@@ -198,13 +190,12 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/editProblema"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                android:text="El usuario escritor no puede cambiar su contrseña."
                 android:textColor="@android:color/background_dark" />
 
             <TextView
@@ -215,20 +206,68 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/txtsolucion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="-"
                 android:textColor="@android:color/background_dark" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/guardarReporteE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ASIGNAR"
-                android:background="@drawable/boton"/>
+                android:background="@drawable/boton"
+                android:text="ASIGNAR" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider12"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider14"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/cerrarReporteE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boton"
+                android:text="CERRAR" />
 
         </LinearLayout>
     </ScrollView>

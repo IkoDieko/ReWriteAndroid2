@@ -50,14 +50,22 @@ public class InicioEventos extends AppCompatActivity {
         btnNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent in = getIntent();
+                String idusuario = in.getStringExtra("idusuario");
                 Intent i = new Intent(InicioEventos.this, AltaReporte.class);
+                i.putExtra("idusuario", idusuario);
                 startActivity(i);
             }
         });
         btnVer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent in = getIntent();
+                String tipo = in.getStringExtra("tipo");
+                String idusuario = in.getStringExtra("idusuario");
                 Intent i = new Intent(InicioEventos.this, VerReportesE.class);
+                i.putExtra("tipo2", tipo);
+                i.putExtra("idusuario", idusuario);
                 startActivity(i);
             }
         });
