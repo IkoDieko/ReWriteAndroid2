@@ -27,17 +27,21 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String usuario = usu.getText().toString();
+                System.out.println(usuario);
                 String pass = contra.getText().toString();
-
+                System.out.println(pass);
                 AdminSQLiteOpenHelper alta = new AdminSQLiteOpenHelper(Login.this);
                 SQLiteDatabase bd = alta.getWritableDatabase();
                 Cursor buscar = bd.rawQuery("select * from usuario where usuario = '"+usuario+"' and pass ='"+pass+"'", null);
 
                 String tipo = "";
+                String us = "";
 
                 if (buscar.moveToFirst()) {
                     tipo = buscar.getString(buscar.getColumnIndex("tipo"));
-                    System.out.println(tipo);
+                    us = buscar.getString(buscar.getColumnIndex("usuario"));
+                    System.out.println("tipo: "+tipo);
+                    System.out.println("ususario: "+us);
                     Intent i = new Intent(Login.this, Main.class);;
                     if(tipo.equals("escritor")){
                         i = new Intent(Login.this, Main.class);
@@ -61,10 +65,10 @@ public class Login extends AppCompatActivity {
                     id = buscar.getString(buscar.getColumnIndex("idusuario"));
 
                     i.putExtra("idusuario", id);
-                    i.putExtra("usuario", usuario);
+                    i.putExtra("usuario", us);
                     i.putExtra("tipo", tipo);
                     startActivity(i);
-                    finish();
+
 
                 } else {
                     Toast.makeText(Login.this,"Usuario y/o contraseña no coinciden.", Toast.LENGTH_SHORT).show();

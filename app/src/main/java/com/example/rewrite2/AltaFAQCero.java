@@ -38,6 +38,8 @@ public class AltaFAQCero extends AppCompatActivity {
         txtPregunta = (EditText) findViewById(R.id.editPre);
         txtRespuesta = (EditText) findViewById(R.id.editRes);
 
+        txtEtiqueta.setText("Sin evento");
+
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,16 +55,12 @@ public class AltaFAQCero extends AppCompatActivity {
                     Intent miInt = getIntent();
                     String us = miInt.getStringExtra("idusuario");
 
-                    Cursor buscar = bd.rawQuery("select * from FAQs where idlevanta2 = "+us, null);
-                    while (buscar.moveToNext()){
-                        System.out.println("FAQ: "+buscar.getString(buscar.getColumnIndex("pregunta")));
-                    }
-
                     ContentValues nuevoRegistro = new ContentValues();
                     nuevoRegistro.put("pregunta", pre);
                     nuevoRegistro.put("solucion", res);
-                    nuevoRegistro.put("etiqueta", eti);
+                    nuevoRegistro.put("etiqueta", "Sin evento");//Cambia etiqueta!!!
                     nuevoRegistro.put("idlevanta2", us);
+                    nuevoRegistro.put("idrepEvento1", 1);//Cambiar Num de REporte de Evento con etiqueta FAQ
                     bd.insert("FAQs", null, nuevoRegistro);
                     bd.close();
 

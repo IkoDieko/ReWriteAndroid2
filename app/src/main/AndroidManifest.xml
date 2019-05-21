@@ -13,6 +13,11 @@
         <activity android:name=".VerReportesM" />
         <activity android:name=".inicioM" />
         <activity
+            android:name=".DetallesFAQ"
+            android:exported="true"
+            android:label="@string/title_activity_detalles_faq"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".AltaFAQCero"
             android:exported="true"
             android:label="@string/title_activity_alta_faqcero"

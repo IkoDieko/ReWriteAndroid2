@@ -19,5 +19,6 @@
     <string name="title_activity_publica_faq">Publicar FAQs para usuarios</string>
     <string name="title_activity_dar_alta_faq">Nueva FAQ desde reporte</string>
     <string name="title_activity_alta_faqcero">Nueva FAQ</string>
+    <string name="title_activity_detalles_faq">Detalles FAQ</string>
 
 </resources>
