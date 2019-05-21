@@ -83,6 +83,7 @@ public class ReporteM extends AppCompatActivity {
             cerrado.setText(usucierra1);
         }
         usuariolevanta.setEnabled(false);
+        //dasd
 
     }
 }
