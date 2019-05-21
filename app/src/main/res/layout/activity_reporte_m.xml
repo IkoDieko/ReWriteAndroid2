@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ReporteEvento"
-    tools:showIn="@layout/activity_reporte_evento">
+    tools:context=".ReporteM">
 
     <ScrollView
         android:layout_width="339dp"
@@ -41,7 +39,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/editIdEvent"
+                    android:id="@+id/idMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -60,7 +58,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/editEstadoEv"
+                    android:id="@+id/EstadoMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,7 +80,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editEtoqueta"
+                    android:id="@+id/etiquetaMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -105,7 +103,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtLevantado"
+                    android:id="@+id/LevantadoMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -127,7 +125,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtAsignaReporte"
+                    android:id="@+id/AsignadoMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -150,7 +148,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtSolucionaReporte"
+                    android:id="@+id/SolucionadoMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -173,7 +171,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/txtCerrado"
+                    android:id="@+id/CerradoMant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -190,7 +188,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editProblema"
+                android:id="@+id/ProblemaMant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -206,7 +204,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/txtsolucion"
+                android:id="@+id/SolucionMant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -214,7 +212,7 @@
                 android:textColor="@android:color/background_dark" />
 
             <Button
-                android:id="@+id/guardarReporteE"
+                android:id="@+id/guardarReporteM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/boton"
@@ -263,7 +261,7 @@
                 android:background="?android:attr/listDivider" />
 
             <Button
-                android:id="@+id/cerrarReporteE"
+                android:id="@+id/cerrarReporteM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/boton"
@@ -312,62 +310,32 @@
                 android:background="?android:attr/listDivider" />
 
             <Button
-                android:id="@+id/elimRE"
+                android:id="@+id/eliminaM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/boton"
                 android:text="ELIMINAR" />
 
-            <View
-                android:id="@+id/divider23"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider24"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider25"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider26"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider27"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider28"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <View
-                android:id="@+id/divider29"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <Button
-                android:id="@+id/crearRMRE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/boton"
-                android:text="Crear Reporte de Mantenimiento" />
-
         </LinearLayout>
     </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/regresaRM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
 </android.support.constraint.ConstraintLayout>

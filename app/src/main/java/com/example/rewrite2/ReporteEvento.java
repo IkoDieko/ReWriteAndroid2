@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class ReporteEvento extends AppCompatActivity {
     private TextView id1, estado;
     private EditText etiqueta, usuariolevanta, problema, asignado, solucionado, cerrado, solucion;
-    private Button guardar, cerrar;
+    private Button guardar, cerrar, eliminar, RM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,8 @@ public class ReporteEvento extends AppCompatActivity {
         problema = findViewById(R.id.editProblema);
         guardar = findViewById(R.id.guardarReporteE);
         cerrar = findViewById(R.id.cerrarReporteE);
+        eliminar = findViewById(R.id.elimRE);
+        RM = findViewById(R.id.crearRMRE);
         asignado = findViewById(R.id.txtAsignaReporte);
         solucionado = findViewById(R.id.txtSolucionaReporte);
         cerrado = findViewById(R.id.txtCerrado);
@@ -111,14 +113,12 @@ public class ReporteEvento extends AppCompatActivity {
             estado.setEnabled(false);
             etiqueta.setEnabled(false);
             cerrado.setEnabled(false);
-            problema.setEnabled(false);
             solucionado.setEnabled(false);
             solucion.setEnabled(false);
         } else if (tipo.equals("ingenieroE")){
             estado.setEnabled(false);
             etiqueta.setEnabled(false);
             cerrado.setEnabled(false);
-            problema.setEnabled(false);
             asignado.setEnabled(false);
             solucionado.setEnabled(false);
             guardar.setText("Guardar Solución");
@@ -132,6 +132,7 @@ public class ReporteEvento extends AppCompatActivity {
                 String id2 = i.getStringExtra("idFolio");
                 String idinge = i.getStringExtra("idusuario");
                 String usuasignado = asignado.getText().toString();
+                String problem = problema.getText().toString();
                 AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
                 SQLiteDatabase bd = buscar.getWritableDatabase();
 
@@ -142,6 +143,7 @@ public class ReporteEvento extends AppCompatActivity {
                         ContentValues cv = new ContentValues();
                         cv.put("idasignado", idasignado);
                         cv.put("estado", "Pendiente");
+                        cv.put("problema", problem);
                         bd.update("reporteE", cv, "idreporteE = "+id2, null);
                         Toast.makeText(ReporteEvento.this,"Reporte asignado con exito.", Toast.LENGTH_SHORT).show();
                         finish();
@@ -159,6 +161,7 @@ public class ReporteEvento extends AppCompatActivity {
                             cv.put("idsoluciona", idinge);
                             cv.put("solucion", solu);
                             cv.put("estado", "Solucionado");
+                            cv.put("problema", problem);
                             bd.update("reporteE", cv, "idreporteE = "+id2, null);
                             Toast.makeText(ReporteEvento.this,"Reporte guardado con exito.", Toast.LENGTH_SHORT).show();
                             finish();
@@ -183,13 +186,42 @@ public class ReporteEvento extends AppCompatActivity {
 
                     ContentValues cv = new ContentValues();
                     cv.put("idcierra", idusu);
+                    cv.put("estado", "Cerrado");
                     bd.update("reporteE", cv, "idreporteE = "+id2, null);
                     Toast.makeText(ReporteEvento.this,"Reporte cerrado con exito.", Toast.LENGTH_SHORT).show();
                     finish();
 
-                } else{
+                } else if (estado.getText().toString().equals("En Mantenimiento")){
+                    Toast.makeText(ReporteEvento.this,"El reporte está en mantenimiento.", Toast.LENGTH_SHORT).show();
+                } else {
                     Toast.makeText(ReporteEvento.this,"No se ha solucionado este reporte.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                String id2 = i.getStringExtra("idFolio");
+                AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
+                SQLiteDatabase bd = buscar.getWritableDatabase();
+                bd.delete("reporteE", "idreporteE = "+id2, null);
+                Toast.makeText(ReporteEvento.this,"Reporte eliminado.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+        RM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                String id2 = i.getStringExtra("idFolio");
+                AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
+                SQLiteDatabase bd = buscar.getWritableDatabase();
+                ContentValues cv = new ContentValues();
+                cv.put("estado", "En Mantenimiento");
+                bd.update("reporteE", cv, "idreporteE = "+id2, null);
+                finish();
             }
         });
 

@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ReporteM"></activity>
+        <activity android:name=".VerReportesM" />
+        <activity android:name=".inicioM" />
         <activity
             android:name=".AltaFAQCero"
-            android:label="@string/title_activity_alta_faqcero"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_alta_faqcero"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DarALtaFAQ"
             android:label="@string/title_activity_dar_alta_faq"

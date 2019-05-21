@@ -35,7 +35,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "");
         BaseDeDatos.execSQL("create table reporteM (idreporteM integer primary key autoincrement not null," +
                 " idlevanta1 integer, idasignado1 integer, idsoluciona1 integer, idcierra1 integer," +
-                " fechaLevanta text, fechaAsigna text, fechaSoluciona text, fechaCierra text," +
+                " fechaLevanta text," +
                 " etiqueta text, estado text, problema text, solucion text, idrepEvento integer," +
                 " FOREIGN KEY (idlevanta1) REFERENCES usuario(idusuario), " +
                 " FOREIGN KEY (idasignado1) REFERENCES usuario(idusuario)," +
@@ -49,7 +49,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 " FOREIGN KEY (idlevanta2) REFERENCES usuario(idusuario))"+
                 "");
 
-        ContentValues nuevoRegistro1, nuevoRegistro2, nuevoRegistro3, nuevoRegistro4, nuevoRegistro5, nuevoRegistro6;
+        ContentValues nuevoRegistro1, nuevoRegistro2, nuevoRegistro3, nuevoRegistro4, nuevoRegistro5, nuevoRegistro6, nuevoRegistro7;
 
         nuevoRegistro1 = new ContentValues();
         nuevoRegistro1.put("usuario", "Marco");
@@ -86,6 +86,14 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         nuevoRegistro6.put("pass", "123");
         nuevoRegistro6.put("tipo", "gerenteE");
         BaseDeDatos.insert("usuario", null, nuevoRegistro6);
+
+        nuevoRegistro7 = new ContentValues();
+        nuevoRegistro7.put("usuario", "David");
+        nuevoRegistro7.put("pass", "123");
+        nuevoRegistro7.put("tipo", "programador");
+        BaseDeDatos.insert("usuario", null, nuevoRegistro7);
+
+
 
 
 
