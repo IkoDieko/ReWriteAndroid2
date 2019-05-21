@@ -183,6 +183,7 @@ public class ReporteEvento extends AppCompatActivity {
 
                     ContentValues cv = new ContentValues();
                     cv.put("idcierra", idusu);
+                    cv.put("estado", "Cerrado");
                     bd.update("reporteE", cv, "idreporteE = "+id2, null);
                     Toast.makeText(ReporteEvento.this,"Reporte cerrado con exito.", Toast.LENGTH_SHORT).show();
                     finish();

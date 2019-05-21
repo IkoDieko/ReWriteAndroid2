@@ -60,6 +60,13 @@ private FloatingActionButton regresa;
                     nuevoRegistro.put("tipo", "lienzo");
                     nuevoRegistro.put("idusuario1", 1);
                     BaseDeDatos.insert("obra", null, nuevoRegistro);
+
+                        /*ContentValues nuevoRegistro6 = new ContentValues();
+                        nuevoRegistro6.put("usuario", "Juan");
+                        nuevoRegistro6.put("pass", "123");
+                        nuevoRegistro6.put("tipo", "gerenteE");
+                        BaseDeDatos.insert("usuario", null, nuevoRegistro6);
+*/
                         BaseDeDatos.close();
 
 

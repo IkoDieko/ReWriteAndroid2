@@ -33,7 +33,7 @@ public class InicioEventos extends AppCompatActivity {
         txtUsuario = (TextView) findViewById(R.id.labelUsuario);
 
         Intent in = getIntent();
-        String us = in.getStringExtra("correoheader");
+        String us = in.getStringExtra("usuario");
         String tipo = in.getStringExtra("tipo");
 
         txtUsuario.setText(us);
@@ -46,6 +46,7 @@ public class InicioEventos extends AppCompatActivity {
             tipo = "Gerente de eventos:";
         }
         txtTipoUs.setText(tipo);
+        txtUsuario.setText(us);
 
         btnNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
