@@ -1,8 +1,11 @@
 package com.example.rewrite2;
 
+import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +25,8 @@ public class DetallesFAQ extends AppCompatActivity {
     AdminSQLiteOpenHelper admin;
     SQLiteDatabase bd;
     String idFAQ;
+    Dialog miPop;
+    Button btnAcepta, btnCancela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class DetallesFAQ extends AppCompatActivity {
 
         admin = new AdminSQLiteOpenHelper(DetallesFAQ.this);
         bd = admin.getWritableDatabase();
+
+        miPop = new Dialog(this);
 
         editEtiF = (EditText) findViewById(R.id.editEtiF);
         editPreF = (EditText) findViewById(R.id.editPreF);
@@ -73,8 +80,7 @@ public class DetallesFAQ extends AppCompatActivity {
         btnEliminaF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bd.execSQL("DELETE FROM FAQs WHERE idFAQ="+idFAQ);
-                Toast.makeText(DetallesFAQ.this, "Se eliminó la FAQ", Toast.LENGTH_SHORT).show();
+                verPopUp(v);
             }
         });
 
@@ -94,6 +100,34 @@ public class DetallesFAQ extends AppCompatActivity {
 
 
 
+    }
+
+    public void verPopUp(View v){
+
+
+        miPop.setContentView(R.layout.popup);
+
+        btnAcepta = (Button) miPop.findViewById(R.id.btnAcepta);
+        btnCancela = (Button) miPop.findViewById(R.id.btnCancela);
+
+        btnAcepta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bd.execSQL("DELETE FROM FAQs WHERE idFAQ="+idFAQ);
+                Toast.makeText(DetallesFAQ.this, "Se eliminó la FAQ", Toast.LENGTH_SHORT).show();
+                miPop.dismiss();
+                finish();
+            }
+        });
+
+        btnCancela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                miPop.dismiss();
+            }
+        });
+        miPop.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        miPop.show();
     }
 
 }

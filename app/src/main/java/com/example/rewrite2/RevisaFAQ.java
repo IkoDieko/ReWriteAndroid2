@@ -69,9 +69,17 @@ public class RevisaFAQ extends AppCompatActivity {
                 Cursor buscar = null;
                 String criterio = "";
                 String buscando = editBusca.getText().toString();
+
+                buscar = bd.rawQuery("select * from FAQs ", null);
+                while(buscar.moveToNext()){
+                    System.out.println("Encuentra");
+                    System.out.println("FAQ:" +buscar.getString(buscar.getColumnIndex("idFAQ"))+ ".- "+
+                            buscar.getString(buscar.getColumnIndex("pregunta")));
+                }
+
                 if(rBtnEti.isChecked()||rBtnNum.isChecked()){
                     if(rBtnEti.isChecked()){
-                        System.out.println("Busca por Etiqueta");
+                        System.out.println("Busca por Etiqueta: "+buscando);
                         buscar = bd.rawQuery("select idFAQ,pregunta,problema,FAQs.etiqueta AS eti," +
                                 "FAQs.solucion AS FSol, FAQs.solucion AS FSol, problema, reporteE.solucion AS ESol, idreporteE," +
                                 " reporteE.etiqueta AS etiE" +

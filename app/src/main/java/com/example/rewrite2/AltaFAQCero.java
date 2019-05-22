@@ -60,7 +60,7 @@ public class AltaFAQCero extends AppCompatActivity {
                     nuevoRegistro.put("solucion", res);
                     nuevoRegistro.put("etiqueta", "Sin evento");//Cambia etiqueta!!!
                     nuevoRegistro.put("idlevanta2", us);
-                    nuevoRegistro.put("idrepEvento1", 1);//Cambiar Num de REporte de Evento con etiqueta FAQ
+                    nuevoRegistro.put("idrepEvento1", 3);//Cambiar Num de REporte de Evento con etiqueta FAQ
                     bd.insert("FAQs", null, nuevoRegistro);
                     bd.close();
 
