@@ -1,14 +1,17 @@
 package com.example.rewrite2;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ReporteM extends AppCompatActivity {
     private TextView id1, estado;
@@ -83,7 +86,114 @@ public class ReporteM extends AppCompatActivity {
             cerrado.setText(usucierra1);
         }
         usuariolevanta.setEnabled(false);
-        //dasd
+
+        if (tipo.equals("ingenieroM") || tipo.equals("programador")){
+            estado.setEnabled(false);
+            etiqueta.setEnabled(false);
+            cerrado.setEnabled(false);
+            asignado.setEnabled(false);
+            solucionado.setEnabled(false);
+            guardar.setText("Guardar Solución");
+        }
+        else if (tipo.equals("gerenteM")){
+            estado.setEnabled(false);
+            etiqueta.setEnabled(false);
+            cerrado.setEnabled(false);
+            solucionado.setEnabled(false);
+            solucion.setEnabled(false);
+        }
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                String id2 = i.getStringExtra("idFolio");
+                AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteM.this);
+                SQLiteDatabase bd = buscar.getWritableDatabase();
+                bd.delete("reporteM", "idreporteM = "+id2, null);
+                Toast.makeText(ReporteM.this,"Reporte eliminado.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                String tipo = i.getStringExtra("tipo3");
+                String id2 = i.getStringExtra("idFolio");
+                String idinge = i.getStringExtra("idusuario");
+                String usuasignado = asignado.getText().toString();
+                String problem = problema.getText().toString();
+                AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteM.this);
+                SQLiteDatabase bd = buscar.getWritableDatabase();
+
+                if (tipo.equals("gerenteM")){
+                    Cursor validar = bd.rawQuery("select * from usuario where usuario = '"+usuasignado+"' and tipo = 'ingenieroM' or tipo = 'programador'", null);
+                    if (validar.moveToFirst()){
+                        String idasignado = validar.getString(validar.getColumnIndex("idusuario"));
+                        ContentValues cv = new ContentValues();
+                        cv.put("idasignado1", idasignado);
+                        cv.put("estado", "Asignado");
+                        cv.put("problema", problem);
+                        bd.update("reporteM", cv, "idreporteM = "+id2, null);
+                        Toast.makeText(ReporteM.this,"Reporte asignado con exito.", Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                            Toast.makeText(ReporteM.this,"No se han encontrado ingenieros o programadores con ese nombre de usuario.", Toast.LENGTH_SHORT).show();
+                        }
+                }
+                else if (tipo.equals("ingenieroM") || tipo.equals("programador")){
+                    if (estado.getText().toString().equals("Asignado") || estado.getText().toString().equals("Solucionado")){
+                        String solu = solucion.getText().toString();
+                            ContentValues cv = new ContentValues();
+                            cv.put("idsoluciona1", idinge);
+                            if (solu.isEmpty() == false){
+                                cv.put("solucion", solu);
+                                cv.put("estado", "Resuelto");
+                            }
+                            cv.put("problema", problem);
+                            bd.update("reporteM", cv, "idreporteM = "+id2, null);
+                            Toast.makeText(ReporteM.this,"Reporte guardado con exito.", Toast.LENGTH_SHORT).show();
+                            finish();
+
+                    } else {
+                        Toast.makeText(ReporteM.this,"Reporte no asignado.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+        cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (estado.getText().toString().equals("Resuelto")){
+                    Intent i = getIntent();
+                    String tipo = i.getStringExtra("tipo3");
+                    String id2 = i.getStringExtra("idFolio");
+                    String idusu = i.getStringExtra("idusuario");
+                    AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteM.this);
+                    SQLiteDatabase bd = buscar.getWritableDatabase();
+
+                    ContentValues cv = new ContentValues();
+                    cv.put("idcierra1", idusu);
+                    cv.put("estado", "Cerrado");
+                    bd.update("reporteM", cv, "idreporteM = "+id2, null);
+                    Toast.makeText(ReporteM.this,"Reporte cerrado con exito.", Toast.LENGTH_SHORT).show();
+                    finish();
+
+                }  else {
+                    Toast.makeText(ReporteM.this,"No se ha solucionado este reporte.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerReportesM">
+    tools:context=".ReportesEnMant">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,40 +46,20 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="37dp"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center"
-        android:text="RECIENTES"
-        android:textColor="@android:color/background_light"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/listReportesM"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <ListView
-        android:id="@+id/listReportesM"
-        android:layout_width="393dp"
-        android:layout_height="388dp"
-        android:layout_marginTop="104dp"
+        android:id="@+id/listaRepEnMant"
+        android:layout_width="395dp"
+        android:layout_height="535dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:drawable/screen_background_light_transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/regresarVerM"
-        android:layout_width="wrap_content"
+        android:id="@+id/regresaReportesMant"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -90,9 +70,9 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
+        app:layout_constraintVertical_bias="0.953"
         app:srcCompat="@drawable/ic_arrow_back" />
 </android.support.constraint.ConstraintLayout>

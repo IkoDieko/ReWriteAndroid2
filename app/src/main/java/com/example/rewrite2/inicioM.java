@@ -60,7 +60,13 @@ public class inicioM extends AppCompatActivity {
         altaRE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent in = getIntent();
+                String tipo = in.getStringExtra("tipo");
+                String idusuario = in.getStringExtra("idusuario");
+                Intent i = new Intent(inicioM.this, ReportesEnMant.class);
+                i.putExtra("tipo2", tipo);
+                i.putExtra("idusuario", idusuario);
+                startActivity(i);
             }
         });
 
