@@ -109,6 +109,8 @@ public class Main extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.contenido, new FragmentoAjustes()).commit();
         } else if (id == R.id.nav_share) {
 
+        } else if (id == R.id.nav_FAQS) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenido, new FAQs()).commit();
         } else if (id == R.id.nav_salir) {
             Intent i = new Intent(Main.this, Login.class);
             startActivity(i);

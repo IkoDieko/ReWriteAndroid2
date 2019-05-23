@@ -21,8 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Etiqueta:"
-                android:textColor="@color/design_default_color_primary_dark"/>
+                android:textColor="@color/design_default_color_primary_dark" />
 
             <TextView
                 android:id="@+id/labelEtiR"
@@ -76,88 +75,78 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tienes que ir al módulo de configuración. c:" />
+
+            <TextView
+                android:id="@+id/nuevaF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/side_nav_bar"
+                android:gravity="center"
+                android:text="NUEVA FAQ"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textViewE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Etiqueta:"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+            <EditText
+                android:id="@+id/editEtiQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pregunta:"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/editPreQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text=""
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Respuesta: "
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/editResQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text=""
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnGuardaQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/boton"
+                android:text="GUARDAR" />
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="348dp"
-        android:layout_height="391dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
 
-
-        <TextView
-            android:id="@+id/nuevaF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/side_nav_bar"
-            android:gravity="center"
-            android:text="NUEVA FAQ"
-            android:textColor="@android:color/background_light" />
-        <TextView
-            android:id="@+id/textViewE"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Etiqueta:"
-            android:textColor="@color/design_default_color_primary_dark"/>
-
-        <TextView
-            android:id="@+id/labelEtiN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Configuración" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pregunta:"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="¿Cómo cambio mi nombre de usuario?"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Respuesta: "
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="Tienes que ir al módulo de configuración."
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GUARDAR"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/boton"/>
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class InicioFAQs extends AppCompatActivity {
 
-    private Button btnAltas, btnPublica, btnRevisa, btnAltaCero;
+    private Button btnAltas, btnRevisa, btnAltaCero;
     private String usID;
 
     @Override
@@ -33,7 +33,6 @@ public class InicioFAQs extends AppCompatActivity {
         });
 
         btnAltas = (Button) findViewById(R.id.btnAltaF);
-        btnPublica = (Button) findViewById(R.id.btnPublicaF);
         btnRevisa = (Button) findViewById(R.id.btnRevisarF);
         btnAltaCero = (Button) findViewById(R.id.btnAltaCero);
 
@@ -45,14 +44,7 @@ public class InicioFAQs extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        btnPublica.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(InicioFAQs.this, PublicaFAQ.class);
-                i.putExtra("idusuario",usID);
-                startActivity(i);
-            }
-        });
+
         btnRevisa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -21,4 +21,7 @@
     <string name="title_activity_alta_faqcero">Nueva FAQ</string>
     <string name="title_activity_detalles_faq">Detalles FAQ</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

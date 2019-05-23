@@ -92,7 +92,7 @@ public class DetallesFAQ extends AppCompatActivity {
                 cv.put("pregunta",editPreF.getText().toString());
                 cv.put("solucion",editSolF.getText().toString());
                 bd.update("FAQs",cv,"idFAQ ="+idFAQ,null);
-                bd.close();
+
                 Toast.makeText(DetallesFAQ.this, "Se actualizó la FAQ", Toast.LENGTH_SHORT).show();
             }
         });
