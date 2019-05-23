@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     private EditText usu, contra;
     private Button inicia, registra;
+    private ImageButton btnFaq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,15 @@ public class Login extends AppCompatActivity {
         contra = findViewById(R.id.editContra);
         inicia = findViewById(R.id.btnIniciar);
         registra = findViewById(R.id.btn_registrar);
+        btnFaq = (ImageButton) findViewById(R.id.btnFAQs);
 
+        btnFaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent miInt = new Intent(Login.this, FAQsU.class);
+                startActivity(miInt);
+            }
+        });
 
         inicia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +52,7 @@ public class Login extends AppCompatActivity {
                     us = buscar.getString(buscar.getColumnIndex("usuario"));
                     System.out.println("tipo: "+tipo);
                     System.out.println("ususario: "+us);
-                    Intent i = new Intent(Login.this, Main.class);;
+                    Intent i = new Intent(Login.this, Main.class);
                     if(tipo.equals("escritor")){
                         i = new Intent(Login.this, Main.class);
                     }else if(tipo.equals("ingenieroE")){
