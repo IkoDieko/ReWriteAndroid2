@@ -69,13 +69,15 @@ public class ReportesEnMant extends AppCompatActivity {
                 SQLiteDatabase bd = juego.getWritableDatabase();
                 Cursor verifica = bd.rawQuery("select * from reporteE where idreporteE = '"+bar[0]+"'", null);
                 if (verifica.moveToFirst()){
-                    String problema, etiqueta, fecha;
+                    String problema, etiqueta, fecha, idE;
                     problema = verifica.getString(verifica.getColumnIndex("problema"));
                     etiqueta = verifica.getString(verifica.getColumnIndex("etiqueta"));
+                    idE = verifica.getString(verifica.getColumnIndex("idreporteE"));
                     fecha = verifica.getString(verifica.getColumnIndex("fechaLevanta"));
 
                     ContentValues cv = new ContentValues();
                     cv.put("idlevanta1", idusuario);
+                    cv.put("idrepEvento", idE);
                     cv.put("fechaLevanta", fecha);
                     cv.put("etiqueta", etiqueta);
                     cv.put("estado", "Creado");

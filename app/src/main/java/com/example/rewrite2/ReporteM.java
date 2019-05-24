@@ -55,6 +55,8 @@ public class ReporteM extends AppCompatActivity {
             String idsoluciona1 = validar.getString(validar.getColumnIndex("idsoluciona1"));
             String idcierra1 = validar.getString(validar.getColumnIndex("idcierra1"));
             String soluc = validar.getString(validar.getColumnIndex("solucion"));
+            String idEvento = validar.getString(validar.getColumnIndex("idrepEvento"));
+
             String usulevanto1 = "";
             String usulasigno1 = "";
             String ususoluciona1 = "";
@@ -84,8 +86,17 @@ public class ReporteM extends AppCompatActivity {
             solucion.setText(soluc);
             solucionado.setText(ususoluciona1);
             cerrado.setText(usucierra1);
+
+            if (idEvento != null){
+                cerrar.setVisibility(View.INVISIBLE);
+            }
+
         }
         usuariolevanta.setEnabled(false);
+
+
+
+
 
         if (tipo.equals("ingenieroM") || tipo.equals("programador")){
             estado.setEnabled(false);
@@ -158,13 +169,31 @@ public class ReporteM extends AppCompatActivity {
                             if (solu.isEmpty() == false){
                                 cv.put("solucion", solu);
                                 cv.put("estado", "Resuelto");
+
+                                Cursor validar = bd.rawQuery("select * from reporteM where idreporteM = '"+id2+"'", null);
+                                if (validar.moveToFirst()){
+                                    String idEvento = validar.getString(validar.getColumnIndex("idrepEvento"));
+                                    if (idEvento != null){
+                                        Cursor validar2 = bd.rawQuery("select * from reporteE where idreporteE = '"+idEvento+"'", null);
+                                        if (validar2.moveToFirst()){{
+                                            ContentValues cv2 = new ContentValues();
+                                            cv2.put("estado", "Solucionado");
+                                            bd.update("reporteE", cv2, "idreporteE = "+idEvento, null);
+                                        }}
+                                    }
+                                }
+
                             }
                             cv.put("problema", problem);
                             bd.update("reporteM", cv, "idreporteM = "+id2, null);
                             Toast.makeText(ReporteM.this,"Reporte guardado con exito.", Toast.LENGTH_SHORT).show();
-                            finish();
 
-                    } else {
+
+                        finish();
+
+                    } else if (estado.getText().toString().equals("Cerrado")) {
+                        Toast.makeText(ReporteM.this,"Reporte cerrado.", Toast.LENGTH_SHORT).show();
+                    } else{
                         Toast.makeText(ReporteM.this,"Reporte no asignado.", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -194,6 +223,8 @@ public class ReporteM extends AppCompatActivity {
                 }
             }
         });
+
+
 
     }
 }

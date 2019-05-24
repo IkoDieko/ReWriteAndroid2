@@ -184,6 +184,14 @@ public class ReporteEvento extends AppCompatActivity {
                     AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
                     SQLiteDatabase bd = buscar.getWritableDatabase();
 
+                    Cursor validar = bd.rawQuery("select * from reporteM where idrepEvento = '"+id2+"'", null);
+                    if (validar.moveToFirst()){
+                        String idMant = validar.getString(validar.getColumnIndex("idreporteM"));
+                        ContentValues cv2 = new ContentValues();
+                        cv2.put("estado", "Cerrado");
+                        bd.update("reporteM", cv2, "idreporteM = "+idMant, null);
+                    }
+
                     ContentValues cv = new ContentValues();
                     cv.put("idcierra", idusu);
                     cv.put("estado", "Cerrado");
@@ -214,14 +222,19 @@ public class ReporteEvento extends AppCompatActivity {
         RM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = getIntent();
-                String id2 = i.getStringExtra("idFolio");
-                AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
-                SQLiteDatabase bd = buscar.getWritableDatabase();
-                ContentValues cv = new ContentValues();
-                cv.put("estado", "En Mantenimiento");
-                bd.update("reporteE", cv, "idreporteE = "+id2, null);
-                finish();
+                if (estado.getText().toString().equals("Solucionado") || estado.getText().toString().equals("Cerrado")){
+                    Intent i = getIntent();
+                    String id2 = i.getStringExtra("idFolio");
+                    AdminSQLiteOpenHelper buscar = new AdminSQLiteOpenHelper(ReporteEvento.this);
+                    SQLiteDatabase bd = buscar.getWritableDatabase();
+                    ContentValues cv = new ContentValues();
+                    cv.put("estado", "En Mantenimiento");
+                    bd.update("reporteE", cv, "idreporteE = "+id2, null);
+                    finish();
+                } else{
+                    Toast.makeText(ReporteEvento.this,"No se ha solucionado este reporte.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
